@@ -55,9 +55,9 @@ public class PersonGenerator {
 
             // Finally can write the file LOL!
 
-            for(String newRec : recs)
+            for(String r : recs)
             {
-                writer.write(newRec, 0, newRec.length());  // stupid syntax for write rec
+                writer.write(r, 0, r.length());  // stupid syntax for write rec
                 // 0 is where to start (1st char) the write
                 // rec. length() is how many chars to write (all)
                 writer.newLine();  // adds the new line
