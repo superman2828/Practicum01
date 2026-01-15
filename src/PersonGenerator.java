@@ -7,6 +7,13 @@ import java.util.Scanner;
 
 import static java.nio.file.StandardOpenOption.CREATE;
 
+//        000001, Bilbo, Baggins, Esq., 1060
+//        000002, Frodo, Baggins, Esq., 1120
+//        000003, Samwise, Gamgee, Esq., 1125
+//        000004, Peregrin, Took, Esq., 1126
+//        000005, Meridoc, Brandybuck, Esq., 1126
+
+
 public class PersonGenerator {
     public static void main(String[] args) {
 
