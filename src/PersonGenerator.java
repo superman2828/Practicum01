@@ -19,7 +19,10 @@ public class PersonGenerator {
 
         Scanner in = new Scanner(System.in);
 
-        ArrayList<String> recs = new ArrayList<>();
+        Person perp;
+
+        // ArrayList<String> recs = new ArrayList<>();
+        ArrayList<Person> recs = new ArrayList<>();
 
         String id;
         String firstName;
@@ -38,11 +41,12 @@ public class PersonGenerator {
             title = SafeInput.getNonZeroLenString(in, "Enter the Title");
             yob = SafeInput.getInt(in, "Enter the Year of Birth");
 
-            rec = id + ", " + firstName + ", " + lastName + ", " + title + ", " + yob;
+            // rec = id + ", " + firstName + ", " + lastName + ", " + title + ", " + yob;
+            perp = new Person(id, firstName, lastName, title, yob);
 
             // System.out.println(rec);
 
-            recs.add(rec);
+            recs.add(perp);
 
             done = SafeInput.getYNConfirm(in, "Are you done?");
 
@@ -62,9 +66,9 @@ public class PersonGenerator {
 
             // Finally can write the file LOL!
 
-            for(String r : recs)
+            for(Person r : recs)
             {
-                writer.write(r, 0, r.length());  // stupid syntax for write rec
+                writer.write(r.toCSVString(), 0, r.toCSVString().length());  // stupid syntax for write rec
                 // 0 is where to start (1st char) the write
                 // rec. length() is how many chars to write (all)
                 writer.newLine();  // adds the new line
@@ -77,5 +81,7 @@ public class PersonGenerator {
         {
             e.printStackTrace();
         }
+
+
     }
 }
